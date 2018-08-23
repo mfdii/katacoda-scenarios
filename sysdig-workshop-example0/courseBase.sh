@@ -12,5 +12,8 @@ modprobe sysdig-probe
 echo "* Starting nginx"
 docker-compose up -d 
 
+echo "* Starting Sysdig Inspect"
+docker-compose up -f sysdig-inspect.yml -d
+
 echo "* Setup complete"
 
