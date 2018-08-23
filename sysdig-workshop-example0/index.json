@@ -1,15 +1,15 @@
 {
   "pathwayTitle": "Sysdig Container TroubleShooting Workshop",
-  "title": "Example 0 - Exploring Sysdig Output",
+  "title": "Example 0 - Exploring an HTTP Request",
   "description": "Learn how to understand the Sysdig capture format and trace what system calls a process or container makes.",
   "details": {
     "steps": [
       {
-        "title": "Step 1",
+        "title": "Step 1 - Creating a capture of nginx.",
         "text": "step1.md"
       },
       {
-        "title": "Step 2",
+        "title": "Step 2 - Exploring the capture.",
         "text": "step2.md"
       },
       {
