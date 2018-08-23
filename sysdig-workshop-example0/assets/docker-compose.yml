@@ -5,9 +5,9 @@ services:
     image: nginx:latest
     ports:
       - 8080:80
-#  sysdig-inspect:
-#    image: sysdiglabs/sysdig-inspect:latest
-#    ports:
-#      - 4200:4200
-#    volumes:
-#      - ./captures:/tmp/captures/
+  sysdig-inspect:
+    image: sysdiglabs/sysdig-inspect:latest
+    ports:
+      - 4200:4200
+    volumes:
+      - ./captures:/tmp/captures/
