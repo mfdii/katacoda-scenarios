@@ -5,16 +5,24 @@
   "details": {
     "steps": [
       {
-        "title": "Step 1 - Creating a capture of nginx.",
+        "title": "Step 1 - Creating a Capture of Nginx",
         "text": "step1.md"
       },
       {
-        "title": "Step 2 - Exploring the capture.",
+        "title": "Step 2 - Exploring the Capture",
         "text": "step2.md"
       },
       {
-        "title": "Step 3",
+        "title": "Step 3 - The Container Field Class",
         "text": "step3.md"
+      },
+      {
+        "title": "Step 4 - The File Field Class",
+        "text": "step4.md"
+      },
+      {
+        "title": "Step 5 - Filtering Events",
+        "text": "step5.md"
       }
     ],
     "intro": {

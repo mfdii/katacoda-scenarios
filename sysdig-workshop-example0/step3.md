@@ -6,11 +6,15 @@ First, let's look at what our nginx container did during the capture. To filter 
 - `container.image`: the container image name (e.g. sysdig/sysdig:latest)
 
 Let's look up our `container.name` in the capture:
-`sysdig -r nginx.scap -c ls_containers`{{execute}}
+`sysdig -r nginx.scap -c lscontainers`{{execute}}
 
 Then filter for the nginx container:
 `sysdig -r nginx.scap container.name = root_nginx_1`{{execute}}
 
+We see the same set of events as we saw when we ran: 
+`sysdig -r nginx.scap proc.name = nginx`{{execute}}
+
+That's because there's only one process running inside of our container. 
 ```
 2030 01:51:56.381165049 1 nginx (4486) > accept flags=0
 2031 01:51:56.381172600 1 nginx (4486) < accept fd=3(<4t>172.19.0.1:36688->172.19.0.2:80) tuple=172.19.0.1:36688->172.19.0.2:80 queuepct=0 queuelen=0 queuemax=128
@@ -22,8 +26,7 @@ Then filter for the nginx container:
 2103 01:51:56.382110380 1 nginx (4486) > recvfrom fd=3(<4t>172.19.0.1:36688->172.19.0.2:80) size=1024
 2104 01:51:56.382113366 1 nginx (4486) < recvfrom res=78 data=GET / HTTP/1.1..Host: localhost:8080..User-Agent: curl/7.47.0..Accept: */*.... tuple=NULL
 ```
-
-We see the same set of events as we saw when we ran `sysdig -r nginx.scap proc.name = nginx`{{execute}}. That's because there's only one process running inside of our container. We see nginx `accept` the IP connection, then read from the connection using `recvfrom`. We see the `recvfrom` function exit (or return) and the HTTP request in the data argument. For instance, we can see the `User-Agent` is set to `curl/7.47.0`.
+Looking at the snippet above, we see nginx `accept` the IP connection, then read from the connection using `recvfrom`. We see the `recvfrom` function exit (or return) and the HTTP request in the data argument. For instance, we can see the `User-Agent` is set to `curl/7.47.0`.
 
 
 
