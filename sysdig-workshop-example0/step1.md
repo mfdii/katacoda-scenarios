@@ -2,7 +2,7 @@ In this preconfigured environment we have a nginx server running inside a Docker
 
 Starting a capture with `sysdig` is easy. Simply run the `sysdig` command and specify the `-w <filename.scap>` option to  write the to the specified file.
 
-`sysdig -w nginx.scap &`{{execute}}
+`sysdig -w captures/nginx.scap &`{{execute}}
 
 Now that we have a capture running, we can create traffic to our nginx server to better understand how nginx serves a HTTP request.
 

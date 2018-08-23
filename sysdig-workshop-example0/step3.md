@@ -6,13 +6,13 @@ First, let's look at what our nginx container did during the capture. To filter 
 - `container.image`: the container image name (e.g. sysdig/sysdig:latest)
 
 Let's look up our `container.name` in the capture:
-`sysdig -r nginx.scap -c lscontainers`{{execute}}
+`sysdig -r captures/nginx.scap -c lscontainers`{{execute}}
 
 Then filter for the nginx container:
-`sysdig -r nginx.scap container.name = root_nginx_1`{{execute}}
+`sysdig -r captures/nginx.scap container.name = root_nginx_1`{{execute}}
 
 We see the same set of events as we saw when we ran: 
-`sysdig -r nginx.scap proc.name = nginx`{{execute}}
+`sysdig -r captures/nginx.scap proc.name = nginx`{{execute}}
 
 That's because there's only one process running inside of our container. 
 ```

@@ -1,6 +1,6 @@
 With our capture in hand, we can begin to see how nginx serves a request to the requesting user. First, let's look at everything Sysdig captured for the nginx process. We will want to specify the `-r` flag, along with the file name of our capture. Additionally, we are going to specify a Sysdig filter to limit the data we output from the capture. 
 
-`sysdig -r nginx.scap proc.name = nginx`{{execute}}
+`sysdig -r captures/nginx.scap proc.name = nginx`{{execute}}
 
 Here we can see all the system calls that were made to serve the HTTP request. Sysdig output is organized into columns and follows the below format:
 - Event Counter - incremental event counter.
