@@ -8,12 +8,15 @@ curl -s https://s3.amazonaws.com/download.draios.com/stable/install-sysdig | sud
 echo "* Loading kernel module"
 modprobe sysdig-probe
 
-#start nginx
-echo "* Starting nginx"
+#location to store captures.
+echo "* create capture directory"
+mkdir captures
+chown 1000:1000 captures
+
+#start nginx and sysdig inspect
+echo "* Starting containers for scenario"
 docker-compose up -d 
 
-echo "* Starting Sysdig Inspect"
-docker-compose up -f sysdig-inspect.yml -d
 
 echo "* Setup complete"
 
