@@ -1,5 +1,5 @@
 {
-  "pathwayTitle": "Sysdig Container TroubleShooting Workshop",
+  "pathwayTitle": "Sysdig Container Troubleshooting Workshop",
   "title": "Example 0 - Exploring an HTTP Request",
   "description": "Learn how to understand the Sysdig capture format and trace what system calls a process or container makes.",
   "details": {
@@ -35,7 +35,7 @@
     "assets": {
       "host01": [
         {
-          "file": "docker-compose.yml",
+          "file": "*",
           "target": "~/"
         }
       ]

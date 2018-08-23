@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  sysdig-inspect:
+    image: sysdiglabs/sysdig-inspect:0.3.0
+    ports:
+      - 4200:4200
+    volumes:
+      - .:/tmp/captures/
