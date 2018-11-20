@@ -44,7 +44,7 @@
   "environment": {
     "uilayout": "terminal-iframe",
     "showdashboard": true,
-    "dashboards": [{"name": "Sysdig Inspect", "port": 4200}]
+    "dashboards": [{"name": "Sysdig Inspect", "port": 3000}]
   },
   "backend": {
     "imageid": "ubuntu"
